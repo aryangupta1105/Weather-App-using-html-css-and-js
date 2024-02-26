@@ -1,0 +1,14 @@
+.current-tab{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: grey;
+    width: fit-content;
+}
+.form-container{
+    opacity: 0;
+    scale: 0;
+}
+.form-container.active{
+    scale: 1;
+    opacity: 1;
+}
