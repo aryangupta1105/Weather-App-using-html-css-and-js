@@ -4,31 +4,30 @@ const api = "https://api.openweathermap.org/data/3.0/onecall";
 console.log(api_key);
 console.log(api);
 
-function RenderDataUI(data)
-{
-    let newPara = document.createElement('p');
-    newPara.textContent = `${data?.main?.temp.toFixed(2)} C `;
-    document.body.appendChild(newPara);
-}
 
 async function showWeather()
 {
     try{
         let latitude = 15.4423;
-    let longitude = 74.8833;
-    city = "indore"
-
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`
-    );
-    const data = await response.json();
-    RenderDataUI(data);
+        let longitude = 74.8833;
+        city = "indore"
+        
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`
+        );
+        const data = await response.json();
+        RenderDataUI(data);
     }
     catch(er){
 
     }
 }
 
-showWeather();
+function RenderDataUI(data)
+{
+    let newPara = document.createElement('p');
+    newPara.textContent = `${data?.main?.temp.toFixed(2)} C `;
+    document.body.appendChild(newPara);
+}
 
 async function GetOwnWeather(latitude , longitude){
     const result = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${api_key}
