@@ -4,11 +4,19 @@
     background-color: grey;
     width: fit-content;
 }
-.form-container{
+.form-container {
     opacity: 0;
     scale: 0;
 }
-.form-container.active{
+.display-container {
+    opacity: 0;
+    scale: 0;
+}
+.form-container.active ,.display-container.active{
+    scale: 1;
+    opacity: 1;
+}
+.display-container.active{
     scale: 1;
     opacity: 1;
 }
