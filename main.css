@@ -1,43 +1,134 @@
-.current-tab{
-    padding: 10px;
+* , *::before , *::after{
+    margin: 0; 
+    padding: 0;
+    font-family: 'Merriweather Sans', sans-serif;
+    box-sizing: border-box;
+}
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+#Wrapper{
+    height: 100vh;
+    width: 100vw;
+    color: var(--colorLight2);
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+}
+
+.heading{
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 30px;
+    font-size: 30px;
+
+}
+
+.Search-container{
+    margin: 0 auto;
+    margin-top: 4rem;
+    max-width: 550px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Tab{
+    font-size: normal;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 1px;
     border-radius: 5px;
-    background-color: grey;
     width: fit-content;
 }
-.form-container {
-    opacity: 0;
-    scale: 0;
-}
-.display-container {
-    opacity: 0;
-    scale: 0;
-}
-.form-container.active ,.display-container.active{
-    scale: 1;
-    opacity: 1;
-}
-.display-container.active{
-    scale: 1;
-    opacity: 1;
+
+.Tab.current-tab{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgba(219, 226 ,239,0.5);
+    width: fit-content;
 }
 
+.weather-container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .grant-location{
-    opacity: 0;
-    scale: 0;
+    display: none;
 }
-
 .grant-location.active{
-    opacity: 1;
-    scale: 1;
+    display: flex;
+}
+.sub-container{
+    font-weight: 500;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.grant-location .location-head{
+    margin-top: 20px;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
 
+.accessBtn{
+    /* all: unset; */
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: var(--colorDark2);
+    color: var(--colorLight2);
+    padding: 10px 30px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/* Loading Screen css */
 .loading-container{
-    opacity: 0;
-    scale: 0;
+    display: none;
 }
 
 .loading-container.active{
-    opacity: 1;
-    scale: 1;
+    display: flex;
 }
+.loading-container p:first-of-type{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.display-container{
+    /* display: none; */
+}
+.name{
+    display: flex;
+    flex-direction: row;
+    align-items: last baseline;
+    gap: 10px; 
+}
+.name .Location{
+    font-size: 2.5rem;
+    font-weight: 100;
+}
+.name img{
+    height: 25px;
+}
+
+.Weather{
+    font-size: x-large;
+
+}
+.card-container{
+    display: flex;
+    gap: 30px;
+}
+

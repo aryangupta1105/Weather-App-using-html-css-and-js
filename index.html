@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="Wrapper">
-        <h2>WEATHER APP</h2>
+        <h2 class="heading">WEATHER APP</h2>
         <!-- Tab container -->
         <div class="Search-container">
             <p class="Tab" data-userWeather>Your Weather</p>
@@ -21,11 +21,11 @@
         <div class="weather-container">
 
             <!-- Grant Access container -->
-            <div class="grant-location">
+            <div class=" sub-container grant-location">
                 <img src="./images/location.png" alt="" width="80" loading="lazy" height="80">
-                <p>Grant Location Access</p>
-                <p>Allow Access to get weather Information.</p>
-                <button data-AccessBtn>Allow Access</button>
+                <p class="location-head">Grant Location Access</p>
+                <p >Allow Access to get weather Information.</p>
+                <button data-AccessBtn class="accessBtn">Allow Access</button>
             </div>
 
             
@@ -39,16 +39,18 @@
             </form>
 
             <!-- Loading Container -->
-            <div class="loading-container">
+            <div class="sub-container loading-container">
                 <img src="./images/loading.gif" alt="" height="150" width="150">
                 <p>Loading..</p>
             </div>
 
 
             <!-- Weather Display Container or user_infor container -->
-            <div class="display-container">
-                <h3 class="Location" data-cityName></h3>
+            <div class="sub-container display-container">
+                <div class="name">
+                    <h3 class="Location" data-cityName></h3>
                 <img  data-countryIcon>
+                </div>
 
                 <p class="Weather" data-weatherDesc></p>
                 <img class="Weather-img" data-weatherIcon>
