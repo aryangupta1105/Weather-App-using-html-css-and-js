@@ -10,23 +10,30 @@
 <body>
     <div id="Wrapper">
         <h2>WEATHER APP</h2>
+        <!-- Tab container -->
+        <div class="Search-container">
+            <p class="Tab" data-userWeather>Your Weather</p>
+            <p class="Tab" data-searchWeather >Search Weather</p>
+        </div>
+
+        <!-- This is the main container called weather Container -->
+        
         <div class="weather-container">
 
+            <!-- Grant Access container -->
             <div class="grant-location">
                 <img src="./images/location.png" alt="" width="80" loading="lazy" height="80">
                 <p>Grant Location Access</p>
                 <p>Allow Access to get weather Information.</p>
                 <button data-AccessBtn>Allow Access</button>
             </div>
-            <div class="Search-container">
-                <p class="Tab" data-userWeather>Your Weather</p>
-                <p class="Tab" data-searchWeather >Search Weather</p>
-            </div>
+
+            
 
             <!-- Search-data-container -->
-            <form action="" class="form-container">
+            <form  class="form-container" data-searchForm>
                 <input type="text" data-searchInput placeholder="Search For city...">
-                <button class="btn">
+                <button class="btn" type="submit">
                     <img src="./images/search.png" loading="lazy" alt="" height="20" width="20">
                 </button>
             </form>

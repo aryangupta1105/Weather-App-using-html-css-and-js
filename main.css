@@ -20,3 +20,24 @@
     scale: 1;
     opacity: 1;
 }
+
+.grant-location{
+    opacity: 0;
+    scale: 0;
+}
+
+.grant-location.active{
+    opacity: 1;
+    scale: 1;
+}
+
+
+.loading-container{
+    opacity: 0;
+    scale: 0;
+}
+
+.loading-container.active{
+    opacity: 1;
+    scale: 1;
+}
