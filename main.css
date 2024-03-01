@@ -225,3 +225,17 @@
 .form-container{
     display: none;
 }
+
+
+.error-page{
+    display: none;
+}
+
+.error-page img{
+    width: 300px;
+}
+
+.error-page.active{
+    display: flex;
+}
+

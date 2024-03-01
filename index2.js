@@ -7,7 +7,7 @@ const grantAccessButton = document.querySelector("[data-AccessBtn]")
 const grantAccessContainer = document.querySelector(".grant-location");
 const loadingScreen = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".display-container");
-
+const errorPage = document.querySelector(".error-page");
 
 console.log(userTab)
 console.log(searchTab)
@@ -94,6 +94,7 @@ try{
     const resultData = await result.json(); 
     loadingScreen.classList.remove("active");
     userInfoContainer.classList.add("active");
+    errorPage.classList.remove("active");
     console.log(resultData);
     // Now we need to render weather info to the Ui:
     RenderDataUI(resultData);
@@ -101,7 +102,8 @@ try{
 
 catch(er){
     loadingScreen.classList.remove("active");
-    // homework...
+    errorPage.classList.add("active");
+    userInfoContainer.classList.remove("active");
 }
 }
 
@@ -193,11 +195,13 @@ loadingScreen.classList.add("active");
        console.log(data);
     loadingScreen.classList.remove("active");
         userInfoContainer.classList.add("active");
+        errorPage.classList.remove("active");
         RenderDataUI(data);
 
     }
     catch(err){
-        console.log(err);
+        errorPage.classList.add("active");
+        userInfoContainer.classList.remove("active");
     }
 }
 
