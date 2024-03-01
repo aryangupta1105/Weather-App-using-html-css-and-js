@@ -38,11 +38,12 @@ function switchTab(newTab)
         if(!searchForm.classList.contains("active")){
             userInfoContainer.classList.remove("active");
             
-            grantAccessContainer.classList.remove("active");    searchForm.classList.add("active");
+            grantAccessContainer.classList.remove("active");                        
+            searchForm.classList.add("active");
         }
         else{
             searchForm.classList.remove("active");
-            userInfoContainer.classList.add("active");
+            userInfoContainer.classList.remove("active");
             // Now we are in the main container so we need to check the local storage first or we need access:
             getfromSessionStorage();
             
@@ -66,7 +67,7 @@ searchTab.addEventListener("click" , ()=>
 function getfromSessionStorage()
 {
     const localCoordinates = sessionStorage.getItem("user-coordinates");
-    if(localCoordinates){
+    if(!localCoordinates){
         grantAccessContainer.classList.add("active");
     }
     else{
@@ -116,16 +117,17 @@ function RenderDataUI(weatherInfo){
     const weatherTemp = document.querySelector("[data-temp");
     const windspeed = document.querySelector("[data-windspeed]")
     const humidity = document.querySelector("[data-humidity]")
-    const clouds = document.querySelector("[data-clouds]")
-
+    
     cityName.innerText = weatherInfo?.name;
     countryIcon.src = `https://flagcdn.com/144x108/${weatherInfo?.sys?.country.toLowerCase()}.png`
     desc.innerText = weatherInfo?.weather[0]?.description;
     weatherIcon.src = `http://openweathermap.org/img/w/${weatherInfo?.weather?.[0]?.icon}.png`;
-    weatherTemp.innerText  = weatherInfo?.main?.temp;
-    windspeed.innerText = weatherInfo?.wind?.speed;
-    humidity.innerText = weatherInfo?.main?.humidity;
-    clouds.innerText = weatherInfor?.clouds?.all;
+    // console.log(clouds.innerText);
+    weatherTemp.innerText  = `${weatherInfo?.main?.temp} °C`;
+    windspeed.innerText = `${weatherInfo?.wind?.speed} m/s`;
+    humidity.innerText = `${weatherInfo?.main?.humidity}%`;
+    const clouds = document.querySelector("[data-Cloud]");
+    clouds.innerText = `${weatherInfo?.clouds?.all}%`;
 }
 
 // We know that after clicking on the grant access it fetches coordinates of the user: so adding event listeners

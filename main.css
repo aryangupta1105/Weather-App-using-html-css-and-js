@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Merriweather Sans', sans-serif;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 :root {
     --colorDark1: #112D4E;
@@ -56,9 +57,6 @@
     justify-content: center;
     align-items: center;
 }
-.grant-location{
-    display: none;
-}
 .grant-location.active{
     display: flex;
 }
@@ -69,6 +67,9 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+}
+.grant-location{
+    display: none;
 }
 .grant-location .location-head{
     margin-top: 20px;
@@ -106,9 +107,10 @@
     text-align: center;
 }
 
-.display-container{
-    /* display: none; */
+.display-container.active{
+    display: flex;
 }
+
 .name{
     display: flex;
     flex-direction: row;
@@ -122,13 +124,100 @@
 .name img{
     height: 25px;
 }
-
+.temp{
+    font-size: 3rem;
+    font-weight: bolder;
+}
 .Weather{
     font-size: x-large;
-
+    
 }
 .card-container{
+    margin-top: 30px;
     display: flex;
+    flex-direction: row;
+    text-align: center;
     gap: 30px;
 }
 
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    height: 150px;
+    background-color: rgba(219, 226 ,239,0.5);
+    border-radius: 10px;
+    padding: 20px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.card-img{
+    height: 50px;
+    width: 50px;
+}
+.display-container{
+    display: none;
+}
+.value{
+    font-weight: normal;
+    opacity: 80%;
+    font-size: large;
+}
+
+
+
+
+.form-container.active{
+    display: flex;
+}
+
+.form-container{
+    margin: 0 auto;
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.form-container .input-field {
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    color: var(--colorLight2);
+    padding: 10px 15px;
+    font-size: large;
+    background-color: rgba(219, 226 ,239,0.5);
+
+}
+.input-field:focus{
+    border: 2px solid var(--colorLight1);
+}
+.input-field::placeholder{
+    padding: 10px 15px;
+    color: white;
+    opacity: 70%;
+    font-size: large;
+}
+
+.form-container  .btn{
+    border: none;
+    outline: none;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    color: black;
+    background-color: var(--colorDark2);
+}
+
+.form-container{
+    display: none;
+}
